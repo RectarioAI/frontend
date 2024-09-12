@@ -18,3 +18,13 @@ export interface UserActions {
     clearUser: () => void;
     fetchLoginUser: (user: string, password: string) => void;
 }
+
+
+export interface SearchArctions {
+    setSearch: (search: string) => void;
+    fetchSearch: (search: string) => void;
+}
+
+export interface Search {
+    search: string;
+}

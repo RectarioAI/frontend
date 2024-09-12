@@ -17,9 +17,9 @@ const SignUpComponent = () => {
 
   return (
     <div className="w-full mt-16 flex flex-col justify-around items-center">
-      <h2 className="text-3xl pb-5 text-green-800 font-extrabold">Regístrate para continuar</h2>
+      <h2 className="text-3xl pb-5 text-blue-800 font-extrabold">Regístrate para continuar</h2>
       <Input
-        color="success"
+        color="primary"
         type="email"
         label="Email"
         placeholder="you@example.com"
@@ -29,7 +29,7 @@ const SignUpComponent = () => {
         onValueChange={setEmail}
       />
       <Input
-        color="success"
+        color="primary"
         type="password"
         label="password"
         placeholder="your password"
@@ -39,7 +39,7 @@ const SignUpComponent = () => {
         onValueChange={setPassword}
       />
       <Input
-        color="success"
+        color="primary"
         type="your name"
         label="Names"
         placeholder="your names"
@@ -49,7 +49,7 @@ const SignUpComponent = () => {
         onValueChange={setName}
       />
       <Input
-        color="success"
+        color="primary"
         type="your last name"
         label="Last Name"
         placeholder="you@example.com"
@@ -59,7 +59,7 @@ const SignUpComponent = () => {
         onValueChange={setLastName}
       />
       <Input
-        color="success"
+        color="primary"
         type="age"
         label="Age"
         placeholder="your age"
@@ -69,7 +69,7 @@ const SignUpComponent = () => {
         onValueChange={setAge}
       />
       <Input
-        color="success"
+        color="primary"
         type="genre"
         label="Genre"
         placeholder="your genre"

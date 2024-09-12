@@ -9,9 +9,9 @@ const LoginComponent = () => {
 
   return (
     <div className="w-full mt-40 flex flex-col justify-around items-center">
-      <h2 className="text-3xl pb-20 text-green-800 font-extrabold">Inicia sesión para continuar</h2>
+      <h2 className="text-3xl pb-20 text-blue-800 font-extrabold">Inicia sesión para continuar</h2>
       <Input
-        color="success"
+        color="primary"
         type="email"
         label="Email"
         placeholder="you@example.com"
@@ -21,7 +21,7 @@ const LoginComponent = () => {
         onValueChange={setEmail}
       />
       <Input
-        color="success"
+        color="primary"
         type="password"
         label="Password"
         placeholder="your password"

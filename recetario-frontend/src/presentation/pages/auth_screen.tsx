@@ -53,12 +53,12 @@ const AuthScreen = () => {
           alt=""
         />
       </div>
-      <div className="-z-10 absolute inset-0 opacity-80 bg-gradient-to-b from-red-200 to-green-200 col-span-12"></div>
+      <div className="-z-10 absolute inset-0 opacity-80 bg-gradient-to-b from-blue-200 to-blue-400 col-span-12"></div>
       <div className="col-span-1"></div>
       <div className="col-span-10">
         <div className="grid grid-cols-12">
-          <div className="col-span-4 max-h-screen flex flex-col items-center justify-center gap-4 p-10">
-            <h1 className="text-4xl pt-10 text-green-800 font-bold">
+          <div className="col-span-5 max-h-screen flex flex-col items-center justify-center gap-4 p-10">
+            <h1 className="text-4xl pt-10 text-blue-800 font-bold">
               Dinos el producto que buscas y te diremos los mejor calificados
             </h1>
             <span className="font-semibold text-white">
@@ -66,6 +66,7 @@ const AuthScreen = () => {
               <br /> mas saludable, mas amigable, mas económica.
             </span>
           </div>
+          <div className="col-span-1"></div>
           <div className="col-span-4 max-h-screen">
             {mode ? (
                 <LoginComponent />
@@ -75,7 +76,7 @@ const AuthScreen = () => {
             <div className="flex flex-col my-4 gap-4">
               <Button
                 variant="solid"
-                color="success"
+                color="primary"
                 radius="sm"
                 onPress={() => (mode ? loginHandler() : userHandlerNewUser())}
                 className="shadow-md shadow-gray-600"
@@ -84,7 +85,7 @@ const AuthScreen = () => {
               </Button>
               <Button
                 variant="faded"
-                color="success"
+                color="primary"
                 radius="sm"
                 onPress={() => {
                   setmode(!mode);
@@ -95,7 +96,8 @@ const AuthScreen = () => {
               </Button>
             </div>
           </div>
-          <div className="col-span-4 max-h-screen"></div>
+
+          <div className="col-span-2 max-h-screen"></div>
         </div>
       </div>
       <div className="col-span-1"></div>

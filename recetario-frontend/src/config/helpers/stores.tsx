@@ -1,5 +1,5 @@
 import { create } from "zustand";
-import { User, UserActions } from "./stores-types";
+import { Search, SearchArctions, User, UserActions } from "./stores-types";
 import axios from "axios";
 
 export const useUser = create<User & UserActions>((set) => ({
@@ -63,4 +63,17 @@ export const useUser = create<User & UserActions>((set) => ({
         console.log(err);
       });
   },
+}));
+
+export const useSearch = create<SearchArctions & Search>((set) => ({
+  search: "",
+  setSearch: (search: string) => set({ search }),
+  fetchSearch: async (search: string) => {
+    axios.get(`http://localhost:8000/views/api/opinions/${search}`).then((res) => {
+      console.log(res);
+    }
+    ).catch((err) => {
+      console.log(err);
+    });
+  }
 }));
