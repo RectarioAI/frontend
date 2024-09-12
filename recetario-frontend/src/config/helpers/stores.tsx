@@ -62,7 +62,5 @@ export const useUser = create<User & UserActions>((set) => ({
       .catch((err) => {
         console.log(err);
       });
-
-
   },
 }));

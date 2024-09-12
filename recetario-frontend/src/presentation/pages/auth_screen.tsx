@@ -19,14 +19,7 @@ const AuthScreen = () => {
   const password = useUser((state) => state.password);
 
   const userHandlerNewUser = () => {
-    if (
-      !email ||
-      !name ||
-      !lastName ||
-      !password ||
-      !genre ||
-      !age
-    ) {
+    if (!email || !name || !lastName || !password || !genre || !age) {
       return;
     }
     const user = {
@@ -49,7 +42,7 @@ const AuthScreen = () => {
     if (name !== "") {
       navigate("/home");
     }
-  }
+  };
 
   return (
     <div className="grid grid-cols-12">
@@ -66,23 +59,25 @@ const AuthScreen = () => {
         <div className="grid grid-cols-12">
           <div className="col-span-4 max-h-screen flex flex-col items-center justify-center gap-4 p-10">
             <h1 className="text-4xl pt-10 text-green-800 font-bold">
-              Recetario
+              Dinos el producto que buscas y te diremos los mejor calificados
             </h1>
             <span className="font-semibold text-white">
-              Una herrramienta pensada para hacer la vida de los colombianos{" "}
+              Una herrramienta pensada para hacer la vida de los colombianos
               <br /> mas saludable, mas amigable, mas económica.
             </span>
           </div>
           <div className="col-span-4 max-h-screen">
-            {mode ? <LoginComponent /> : <SignUpComponent />}
+            {mode ? (
+                <LoginComponent />
+            ) : (
+                <SignUpComponent />
+            )}
             <div className="flex flex-col my-4 gap-4">
               <Button
                 variant="solid"
                 color="success"
                 radius="sm"
-                onPress={() =>
-                  mode ? loginHandler() : userHandlerNewUser()
-                }
+                onPress={() => (mode ? loginHandler() : userHandlerNewUser())}
                 className="shadow-md shadow-gray-600"
               >
                 {mode ? "Iniciar Sesión" : "Registrarme"}
