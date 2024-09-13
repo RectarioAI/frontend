@@ -1,5 +1,11 @@
 import { create } from "zustand";
-import { Search, SearchArctions, User, UserActions } from "./stores-types";
+import {
+  Product,
+  Search,
+  SearchArctions,
+  User,
+  UserActions,
+} from "./stores-types";
 import axios from "axios";
 
 export const useUser = create<User & UserActions>((set) => ({
@@ -67,13 +73,34 @@ export const useUser = create<User & UserActions>((set) => ({
 
 export const useSearch = create<SearchArctions & Search>((set) => ({
   search: "",
+  productList: [],
+  loading: false,
   setSearch: (search: string) => set({ search }),
   fetchSearch: async (search: string) => {
-    axios.get(`http://localhost:8000/views/api/opinions/${search}`).then((res) => {
-      console.log(res);
-    }
-    ).catch((err) => {
-      console.log(err);
-    });
-  }
+    set({ loading: true });
+    axios
+      .get(`http://localhost:8000/views/api/opinions/${search}`)
+      .then((res) => {
+        const productData = res.data.rankings;
+        console.log(productData);
+        
+        const tempProductList: Product[] = productData.map((item: any) => ({
+          title: item.title,
+          price: item.price,
+          image: item.image_url,
+          positive_comments: item.positive_reviews,
+          negative_comments: item.negative_reviews,
+          neutral_comments: item.neutral_reviews,
+        }));
+
+        set({ productList: tempProductList });
+        set({ loading: false });
+      })
+      .catch((err) => {
+        console.log(err);
+        set({ loading: false });
+      });
+  },
+  resetProductList: () => set({ productList: [] }),
+  setProductList: (productList: Product[]) => set({ productList }),
 }));

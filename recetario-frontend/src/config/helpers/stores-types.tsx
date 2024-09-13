@@ -7,6 +7,15 @@ export interface User {
     age: string;
 }
 
+export interface Product {
+    title: string;
+    price: number;
+    image: string;
+    positive_comments: number;
+    negative_comments: number;
+    neutral_comments: number;
+}
+
 export interface UserActions {
     setEmail: (email: string) => void;
     setName: (name: string) => void;
@@ -23,8 +32,12 @@ export interface UserActions {
 export interface SearchArctions {
     setSearch: (search: string) => void;
     fetchSearch: (search: string) => void;
+    setProductList: (productList: Product[]) => void;
+    resetProductList: () => void;
 }
 
 export interface Search {
     search: string;
+    productList: Product[];
+    loading: boolean;
 }
