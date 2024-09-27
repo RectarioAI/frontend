@@ -16,15 +16,17 @@ const SignUpComponent = () => {
   const setAge = useUser((state) => state.setAge);
 
   return (
-    <div className="w-full mt-16 flex flex-col justify-around items-center">
-      <h2 className="text-3xl pb-5 text-blue-800 font-extrabold">Regístrate para continuar</h2>
+    <div className="w-full mt-10 flex flex-col justify-around items-center">
+      <h2 className="text-3xl pb-3 text-blue-800 font-extrabold">
+        Regístrate para continuar
+      </h2>
       <Input
         color="primary"
         type="email"
         label="Email"
         placeholder="you@example.com"
         labelPlacement="outside"
-        className="pt-4"
+        className="pt-3"
         value={email}
         onValueChange={setEmail}
       />
@@ -34,7 +36,7 @@ const SignUpComponent = () => {
         label="password"
         placeholder="your password"
         labelPlacement="outside"
-        className="pt-4"
+        className="pt-3"
         value={password}
         onValueChange={setPassword}
       />
@@ -44,7 +46,7 @@ const SignUpComponent = () => {
         label="Names"
         placeholder="your names"
         labelPlacement="outside"
-        className="pt-4"
+        className="pt-3"
         value={name}
         onValueChange={setName}
       />
@@ -54,7 +56,7 @@ const SignUpComponent = () => {
         label="Last Name"
         placeholder="you@example.com"
         labelPlacement="outside"
-        className="pt-4"
+        className="pt-3"
         value={lastName}
         onValueChange={setLastName}
       />
@@ -64,7 +66,7 @@ const SignUpComponent = () => {
         label="Age"
         placeholder="your age"
         labelPlacement="outside"
-        className="pt-4"
+        className="pt-3"
         value={age}
         onValueChange={setAge}
       />
@@ -74,7 +76,7 @@ const SignUpComponent = () => {
         label="Genre"
         placeholder="your genre"
         labelPlacement="outside"
-        className="pt-4"
+        className="pt-3"
         value={genre}
         onValueChange={setGenre}
       />
