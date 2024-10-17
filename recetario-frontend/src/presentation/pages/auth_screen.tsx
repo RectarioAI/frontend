@@ -58,7 +58,7 @@ const AuthScreen = () => {
       <div className="col-span-10">
         <div className="grid grid-cols-12">
           <div className="col-span-5 max-h-screen flex flex-col items-center justify-center gap-4 p-10">
-            <h1 className="text-4xl pt-10 text-blue-800 font-bold">
+            <h1 className="text-4xl pt-5 text-blue-800 font-bold">
               Dinos el producto que buscas y te diremos los mejor calificados
             </h1>
             <span className="font-semibold text-white">
@@ -68,11 +68,7 @@ const AuthScreen = () => {
           </div>
           <div className="col-span-1"></div>
           <div className="col-span-4 max-h-screen">
-            {mode ? (
-                <LoginComponent />
-            ) : (
-                <SignUpComponent />
-            )}
+            {mode ? <LoginComponent /> : <SignUpComponent />}
             <div className="flex flex-col my-4 gap-4">
               <Button
                 variant="solid"
